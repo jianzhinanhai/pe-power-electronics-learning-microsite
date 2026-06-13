@@ -1,30 +1,38 @@
 {
-  "project_name": "Power Electronics Learning Microsite",
-  "version": "s4-deployment-package-1.0",
-  "generated_at": "2026-06-13T12:18:23+08:00",
+  "project_name": "pe_power_electronics_learning_microsite",
+  "title": "Power Electronics Learning Microsite",
+  "version": "v3.5",
+  "generated_at": "2026-06-13T08:37:35Z",
   "entrypoint": "index.html",
-  "deployment_target": "GitHub Pages (Codex-assisted) and local static preview",
-  "repository": "<OWNER>/pe-power-electronics-learning-microsite",
-  "visibility": "public GitHub Pages by default unless private Pages access is explicitly configured and verified",
+  "deployment_target": "GitHub Pages",
+  "repository": "jianzhinanhai/pe-power-electronics-learning-microsite",
+  "repository_url": "https://github.com/jianzhinanhai/pe-power-electronics-learning-microsite",
+  "pages_url": "https://jianzhinanhai.github.io/pe-power-electronics-learning-microsite/",
   "status": "packaged",
-  "content_boundary": "User-provided approved HTML from uploaded ZIP. Factual content and external URLs are not independently verified by this package.",
-  "source_boundary": {
-    "uploaded_archive": "pe_power_electronics_learning_microsite_v3_2_s4_fixed_selfcontained.zip",
-    "source_html": "pe_power_electronics_learning_microsite_v3_2_s4_fixed_selfcontained.html",
-    "user_approval": "HTML content and functionality confirmed by user before S4 packaging.",
-    "external_assets": 237
-  },
-  "html_processing": {
-    "source_html_sha256": "4bdc7bcc2adcc75f4c67932a5ccbcef67a1d1caf21023ad1d4818917f4ee2609",
-    "packaged_index_sha256": "4ce0bed7b0be57b95711c2b066f8a4fdb2d94e431b1a21cedd8fd73839d07a5e",
-    "non_content_patches": [
-      "Added pure-anchor pageTop marker for back-to-top support.",
-      "Added CSS for back-to-top control and mark.search-hit compatibility.",
-      "Added visible pure-anchor back-to-top link."
-    ]
-  },
-  "public_release": false,
+  "public_release": true,
   "pdf_ready": true,
+  "content_boundary": "Approved learning microsite content. Public page should contain only learner-facing explanatory content; no process notes, audit comments, prompts, revision instructions, or internal workflow text. System View is text-only; user-uploaded icon sheets are not used in this version after review.",
+  "human_approval": "User confirmed the v3.5 index.html and requested entry into publishing flow.",
+  "update_summary": [
+    "System View changed to text-only structured flow.",
+    "Unsuitable icon thumbnails removed from System View.",
+    "Learner-facing copy cleaned to remove process/audit/instructional production text.",
+    "Scenario architecture images and product images preserved."
+  ],
+  "files": [
+    ".github/workflows/pages.yml",
+    ".nojekyll",
+    "CODEX_PROMPT.md",
+    "DEPLOYMENT.md",
+    "MANIFEST.json",
+    "README.md",
+    "S4_UPDATE_PACKAGE_QA.md",
+    "index.html",
+    "scripts/export_pdf_playwright.js",
+    "scripts/generate_qr.py",
+    "scripts/setup_pages_branch.ps1",
+    "scripts/setup_pages_branch.sh"
+  ],
   "required_files": [
     "index.html",
     "README.md",
@@ -38,18 +46,19 @@
     "scripts/generate_qr.py",
     "scripts/export_pdf_playwright.js"
   ],
-  "files": [
-    ".github/workflows/pages.yml",
-    ".nojekyll",
-    "CODEX_PROMPT.md",
-    "DEPLOYMENT.md",
-    "MANIFEST.json",
-    "README.md",
-    "index.html",
-    "scripts/export_pdf_playwright.js",
-    "scripts/generate_qr.py",
-    "scripts/setup_pages_branch.ps1",
-    "scripts/setup_pages_branch.sh"
-  ],
-  "file_count": 11
+  "checks": {
+    "index_html_exists": true,
+    "pageTop_anchor": true,
+    "print_css": true,
+    "search_hit_style": true,
+    "mobile_media_query": true,
+    "process_terms_absent": true,
+    "system_view_icon_class_absent": true,
+    "zip_hygiene_no_pycache_pyc": true
+  },
+  "sha256": {
+    "index.html": "42b05f1806cb2ef027ca5ba93a823b5dbf67d5cb0e5b9e3eca80d1c941b7d0b8",
+    "MANIFEST.json_pre_final": "2c34656fcfef9d905891b59dfa2fb5be706bd70cacd058bc8add6914d3af6278",
+    "S4_UPDATE_PACKAGE_QA.md": "d14a0844c886ed407ab1a4679b798240cabc5dcaeb250867e414525b85003f37"
+  }
 }
