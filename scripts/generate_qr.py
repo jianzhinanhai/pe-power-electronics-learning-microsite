@@ -1,34 +1,17 @@
 #!/usr/bin/env python3
-"""
-Generate a QR code for a published Pages URL.
-
-Usage:
-  python scripts/generate_qr.py "https://example.github.io/site/" --output qr.png
-
-Requires:
-  pip install qrcode[pil]
-"""
-from __future__ import annotations
-
-import argparse
+"""Generate a QR code for the published Pages URL if qrcode is installed."""
+from pathlib import Path
 import sys
 
-def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("url", help="Published URL to encode")
-    parser.add_argument("--output", default="qr.png", help="Output PNG path")
-    args = parser.parse_args()
+URL = sys.argv[1] if len(sys.argv) > 1 else "https://jianzhinanhai.github.io/pe-power-electronics-learning-microsite/"
+OUT = Path(sys.argv[2] if len(sys.argv) > 2 else "pages_qr.png")
 
-    try:
-        import qrcode
-    except ImportError:
-        print("Missing dependency. Install with: pip install 'qrcode[pil]'", file=sys.stderr)
-        return 2
+try:
+    import qrcode
+except ImportError:
+    print("qrcode package is not installed. Install with: pip install qrcode[pil]")
+    raise SystemExit(1)
 
-    img = qrcode.make(args.url)
-    img.save(args.output)
-    print(f"QR code written to {args.output}")
-    return 0
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+img = qrcode.make(URL)
+img.save(OUT)
+print(f"Saved QR code to {OUT}")

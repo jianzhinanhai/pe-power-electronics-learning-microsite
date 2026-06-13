@@ -1,24 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Checking required files..."
-test -f index.html
-test -f README.md
-test -f DEPLOYMENT.md
-test -f CODEX_PROMPT.md
-test -f MANIFEST.json
-test -f .nojekyll
-test -f .github/workflows/pages.yml
+echo "This script is a helper for local GitHub Pages setup."
+echo "Use gh auth login for browser-based authorization; do not paste secrets into chat."
 
-if ! command -v git >/dev/null 2>&1; then
-  echo "git is required." >&2
+if ! command -v gh >/dev/null 2>&1; then
+  echo "GitHub CLI (gh) is not installed. Install gh or use the GitHub web UI."
   exit 1
 fi
 
-if ! command -v gh >/dev/null 2>&1; then
-  echo "GitHub CLI (gh) is recommended for publishing." >&2
-fi
-
-echo "Package looks ready for GitHub Pages publishing."
-echo "Use: gh auth login"
-echo "Then create/push a repository and enable Pages via GitHub Actions."
+gh auth status || gh auth login
+echo "Authenticated. Continue with repo-specific git commands from DEPLOYMENT.md."
