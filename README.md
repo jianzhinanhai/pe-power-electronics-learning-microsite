@@ -1,55 +1,39 @@
 # Power Electronics Learning Microsite
 
-This folder contains the approved static HTML microsite update package for GitHub Pages.
+This is a deployment test package / release-candidate package for the existing GitHub Pages site.
 
-## Entry point
+## Current workflow status
 
-- `index.html`
+- Workflow stage: S6 No-Go -> S2 fix / real-browser deployment test
+- Package type: Full deployment test package, not final PDF/archive
+- Target repository: `jianzhinanhai/pe-power-electronics-learning-microsite`
+- Target Pages URL: https://jianzhinanhai.github.io/pe-power-electronics-learning-microsite/
+- Entrypoint: `index.html`
 
-## Current update
+## Important boundary
 
-Version: `v3.5`  
-Generated at: `2026-06-13T08:37:35Z`
+The uploaded `index.html` has been preserved as the page entry file for deployment testing.
 
-This update applies the user-confirmed **text-only System View** revision:
+Static inspection found:
 
-- removes unsuitable icon/image thumbnails from the home System View;
-- keeps the System View as a structured text chain from energy sources to end-use loads;
-- preserves scenario architecture images and product images;
-- removes learner-facing text that looked like page-generation instructions, audit process notes, or revision requirements.
+- HTML size: 31,999,388 bytes
+- `<img src>` total: 24
+- embedded `data:image` images: 8
+- remote image URLs: 16
+- product image elements using `product-img`: 16
 
-## Content boundary
-
-Approved learning microsite content. Public page should contain only learner-facing explanatory content; no process notes, audit comments, prompts, revision instructions, or internal workflow text. System View is text-only; user-uploaded icon sheets are not used in this version after review.
-
-Before publishing publicly, review `index.html` for confidential, personal, credential, customer-sensitive, or hidden internal information.
-
-## File structure
-
-```text
-.
-├── index.html
-├── README.md
-├── DEPLOYMENT.md
-├── CODEX_PROMPT.md
-├── MANIFEST.json
-├── .nojekyll
-├── .github/
-│   └── workflows/
-│       └── pages.yml
-└── scripts/
-    ├── setup_pages_branch.sh
-    ├── setup_pages_branch.ps1
-    ├── generate_qr.py
-    └── export_pdf_playwright.js
-```
+The current file still contains 16 remote product image URLs. This package intentionally preserves them because the user requested a full package for Codex deployment and real browser testing.
 
 ## Local preview
 
-Open `index.html` directly in a browser, or run:
+From this folder:
 
 ```bash
-python3 -m http.server 8000
+python3 preview_server.py
 ```
 
-Then visit `http://localhost:8000/`.
+Then open the printed local URL in a browser.
+
+## Security note
+
+GitHub Pages should be treated as public unless private Pages access has been explicitly configured and verified. Do not publish credentials, tokens, private keys, customer-sensitive data, or hidden internal notes.

@@ -1,41 +1,36 @@
-# Deployment Guide
+# Deployment Instructions
 
-Target repository: `jianzhinanhai/pe-power-electronics-learning-microsite`  
-Expected Pages URL: `https://jianzhinanhai.github.io/pe-power-electronics-learning-microsite/`
+## Target
 
-## Recommended update flow
+- Repository: `jianzhinanhai/pe-power-electronics-learning-microsite`
+- Pages URL: https://jianzhinanhai.github.io/pe-power-electronics-learning-microsite/
+- Entrypoint: `index.html`
+
+## Recommended Codex flow
 
 1. Unzip this package.
-2. Review `index.html` locally.
-3. Replace the repository root `index.html` with this package's `index.html`.
-4. Preserve or update the support files as needed:
-   - `README.md`
-   - `DEPLOYMENT.md`
-   - `CODEX_PROMPT.md`
-   - `MANIFEST.json`
-   - `.nojekyll`
-   - `.github/workflows/pages.yml`
-   - `scripts/`
-5. Commit and push to the GitHub Pages source branch.
-6. Wait for Pages deployment to complete.
-7. Re-open the Pages URL and run S6 release audit.
+2. Open the folder in Codex / local environment.
+3. Read `CODEX_PROMPT.md`.
+4. Use GitHub CLI authentication only through browser-based `gh auth login` if needed.
+5. Replace the existing site files with this package content.
+6. Commit and push.
+7. Wait for GitHub Pages deployment.
+8. Run a real-browser audit on desktop and mobile viewport.
 
-## Local preview
+## Required post-deploy evidence
 
-```bash
-python3 -m http.server 8000
-```
+Codex should produce an evidence pack:
 
-Open `http://localhost:8000/`.
+- `live.html`
+- `desktop-1440.png`
+- `mobile-390.png`
+- `network-status.json`
+- `console.log`
+- `live-vs-local-diff.txt`
+- `release-audit.json`
 
-## GitHub Pages safety
+## Do not
 
-Do not publish credentials, tokens, SSH keys, personal data, customer-sensitive information, hidden notes, prompts, audit drafts, or internal process instructions.
-
-Use browser-based GitHub CLI authentication when needed:
-
-```bash
-gh auth login
-```
-
-Do not paste GitHub passwords, personal access tokens, SSH private keys, or 2FA codes into chat.
+- Do not ask the user for GitHub password, token, SSH private key, or 2FA code in chat.
+- Do not rewrite page content unless required for deployment compatibility.
+- Do not proceed to final PDF/archive until release audit is Go or accepted Conditional Go.

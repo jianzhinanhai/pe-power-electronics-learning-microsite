@@ -1,64 +1,38 @@
 {
-  "project_name": "pe_power_electronics_learning_microsite",
-  "title": "Power Electronics Learning Microsite",
-  "version": "v3.5",
-  "generated_at": "2026-06-13T08:37:35Z",
+  "project_name": "Power Electronics Learning Microsite",
+  "version": "full-deployment-rc-from-uploaded-index-zip",
+  "generated_at": "2026-06-13T22:38:12+08:00",
   "entrypoint": "index.html",
-  "deployment_target": "GitHub Pages",
+  "deployment_target": "GitHub Pages existing repo update",
   "repository": "jianzhinanhai/pe-power-electronics-learning-microsite",
-  "repository_url": "https://github.com/jianzhinanhai/pe-power-electronics-learning-microsite",
   "pages_url": "https://jianzhinanhai.github.io/pe-power-electronics-learning-microsite/",
   "status": "packaged",
+  "content_boundary": "Uploaded index.zip preserved as deployment-test source. Remote product images intentionally preserved for real-browser audit.",
   "public_release": true,
-  "pdf_ready": true,
-  "content_boundary": "Approved learning microsite content. Public page should contain only learner-facing explanatory content; no process notes, audit comments, prompts, revision instructions, or internal workflow text. System View is text-only; user-uploaded icon sheets are not used in this version after review.",
-  "human_approval": "User confirmed the v3.5 index.html and requested entry into publishing flow.",
-  "update_summary": [
-    "System View changed to text-only structured flow.",
-    "Unsuitable icon thumbnails removed from System View.",
-    "Learner-facing copy cleaned to remove process/audit/instructional production text.",
-    "Scenario architecture images and product images preserved."
-  ],
+  "pdf_ready": false,
+  "workflow_stage": "S6 No-Go -> S2 fix -> S4 deployment test package",
+  "static_audit": {
+    "html_bytes": 31999388,
+    "img_src_total": 24,
+    "embedded_data_images": 8,
+    "remote_image_refs": 16,
+    "product_image_elements": 16,
+    "local_image_refs": 0
+  },
   "files": [
     ".github/workflows/pages.yml",
     ".nojekyll",
     "CODEX_PROMPT.md",
     "DEPLOYMENT.md",
+    "HTML_AUDIT.md",
     "MANIFEST.json",
     "README.md",
-    "S4_UPDATE_PACKAGE_QA.md",
+    "REMOTE_IMAGE_AUDIT.md",
     "index.html",
+    "preview_server.py",
     "scripts/export_pdf_playwright.js",
     "scripts/generate_qr.py",
     "scripts/setup_pages_branch.ps1",
     "scripts/setup_pages_branch.sh"
-  ],
-  "required_files": [
-    "index.html",
-    "README.md",
-    "DEPLOYMENT.md",
-    "CODEX_PROMPT.md",
-    "MANIFEST.json",
-    ".nojekyll",
-    ".github/workflows/pages.yml",
-    "scripts/setup_pages_branch.sh",
-    "scripts/setup_pages_branch.ps1",
-    "scripts/generate_qr.py",
-    "scripts/export_pdf_playwright.js"
-  ],
-  "checks": {
-    "index_html_exists": true,
-    "pageTop_anchor": true,
-    "print_css": true,
-    "search_hit_style": true,
-    "mobile_media_query": true,
-    "process_terms_absent": true,
-    "system_view_icon_class_absent": true,
-    "zip_hygiene_no_pycache_pyc": true
-  },
-  "sha256": {
-    "index.html": "42b05f1806cb2ef027ca5ba93a823b5dbf67d5cb0e5b9e3eca80d1c941b7d0b8",
-    "MANIFEST.json_pre_final": "2c34656fcfef9d905891b59dfa2fb5be706bd70cacd058bc8add6914d3af6278",
-    "S4_UPDATE_PACKAGE_QA.md": "d14a0844c886ed407ab1a4679b798240cabc5dcaeb250867e414525b85003f37"
-  }
+  ]
 }
